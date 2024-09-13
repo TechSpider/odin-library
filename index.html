@@ -6,6 +6,7 @@
 		<title>TOP Library</title>
 		<script src="script.js" defer></script>
 		<link rel="stylesheet" href="style.css" />
+		<script src="https://kit.fontawesome.com/87b6763324.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -16,48 +17,37 @@
 				<h1></h1>
 				<button id="new-button" form="new-book-form">New</button>
 			</div>
-			<div class="cards-container">
-				<div class="card">
-					<div class="card-text title">Title: Harry Porter</div>
-					<div class="card-text author">Author: J.K. Reeling</div>
-					<div class="card-text date-published">Date Published: 9/11/01</div>
-					<div class="card-text pages"># of Pages: 420</div>
-					<div class="card-buttons">
-						<button class="mark-read"><i></i></button>
-						<button class="mark-favorite"><i></i></button>
-					</div>
-				</div>
-			</div>
+			<div class="cards-container"></div>
 			<dialog class="dialog">
 				<form class="new-book-form" method="dialog">
 					<label for="book-title">
 						Title:
-						<input name="book-title" type="text" autofocus />
+						<input name="book-title" id="book-title" type="text" autofocus />
 					</label>
 
 					<label for="author-name">
 						Author:
-						<input name="author-name" type="text" />
+						<input name="author-name" id="author-name" type="text" />
 					</label>
 
 					<label for="published-date">
 						Published Date:
-						<input name="published-date" type="text" />
+						<input name="published-date" id="published-date" type="text" />
 					</label>
 
 					<label for="pages">
 						# of Pages:
-						<input name="pages" type="number" />
+						<input name="pages" id="pages" type="number" />
 					</label>
 
 					<label for="have-read">
 						Mark as read
-						<input name="have-read" type="checkbox" />
+						<input name="have-read" id="have-read" type="checkbox" />
 					</label>
 
 					<label for="favorite">
 						Favorite
-						<input type="checkbox" name="favorite" />
+						<input name="favorite" id="favorite" type="checkbox" />
 					</label>
 
 					<button id="submit-button">Submit</button>
