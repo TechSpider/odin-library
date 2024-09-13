@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TOP Library</title>
+		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>The Library of :3</h1>
+			</div>
+			<div class="cards-header">
+				<h1></h1>
+				<button id="new-button" form="new-book-form">New</button>
+			</div>
+			<div class="cards-container">
+				<div class="card">
+					<div class="card-text title">Title: Harry Porter</div>
+					<div class="card-text author">Author: J.K. Reeling</div>
+					<div class="card-text date-published">Date Published: 9/11/01</div>
+					<div class="card-text pages"># of Pages: 420</div>
+					<div class="card-buttons">
+						<button class="mark-read"><i></i></button>
+						<button class="mark-favorite"><i></i></button>
+					</div>
+				</div>
+			</div>
+			<dialog class="dialog">
+				<form class="new-book-form" method="dialog">
+					<label for="book-title">
+						Title:
+						<input name="book-title" type="text" autofocus />
+					</label>
+
+					<label for="author-name">
+						Author:
+						<input name="author-name" type="text" />
+					</label>
+
+					<label for="published-date">
+						Published Date:
+						<input name="published-date" type="text" />
+					</label>
+
+					<label for="pages">
+						# of Pages:
+						<input name="pages" type="number" />
+					</label>
+
+					<label for="have-read">
+						Mark as read
+						<input name="have-read" type="checkbox" />
+					</label>
+
+					<label for="favorite">
+						Favorite
+						<input type="checkbox" name="favorite" />
+					</label>
+
+					<button id="submit-button">Submit</button>
+				</form>
+			</dialog>
+		</div>
+	</body>
+</html>
