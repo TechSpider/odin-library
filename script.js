@@ -12,6 +12,7 @@ submitButton.addEventListener("click", () => {
 	if (validateForm()) {
 		formData = new FormData(form);
 		form.reset();
+		dialog.close();
 		addBook(formData);
 	}
 });
