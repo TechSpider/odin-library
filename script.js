@@ -4,17 +4,33 @@ const dialog = document.querySelector(".dialog");
 const form = document.querySelector(".new-book-form");
 const bookContainer = document.querySelector(".cards-container");
 
+dialog.close();
+
 let library = [];
 
 submitButton.addEventListener("click", () => {
-	formData = new FormData(form);
-
-	addBook(formData);
+	if (validateForm()) {
+		formData = new FormData(form);
+		form.reset();
+		addBook(formData);
+	}
 });
 
 newButton.addEventListener("click", () => {
 	dialog.showModal();
 });
+
+function validateForm() {
+	var a = document.forms["Form"]["book-title"].value;
+	var b = document.forms["Form"]["author-name"].value;
+	var c = document.forms["Form"]["published-date"].value;
+	var d = document.forms["Form"]["pages"].value;
+	if (a == null || a == "" || b == null || b == "" || c == null || c == "" || d == null || d == "") {
+		return false;
+	} else {
+		return true;
+	}
+}
 
 function addBook(formData) {
 	book = new Object();
@@ -52,7 +68,11 @@ function buildCard(book) {
 
 	const markReadButton = document.createElement("button");
 	const markReadIcon = document.createElement("i");
-	markReadIcon.classList.add("fa-regular", "fa-square-check", "fa-xl");
+	if (book.haveRead == "on") {
+		markReadIcon.classList.add("fa-solid", "fa-square-check", "fa-xl");
+	} else {
+		markReadIcon.classList.add("fa-regular", "fa-square-check", "fa-xl");
+	}
 	markReadButton.addEventListener("click", () => {
 		if (markReadIcon.classList.contains("fa-regular")) {
 			markReadIcon.classList.replace("fa-regular", "fa-solid");
@@ -62,7 +82,11 @@ function buildCard(book) {
 	});
 	const markFavoriteButton = document.createElement("button");
 	const markFavoriteIcon = document.createElement("i");
-	markFavoriteIcon.classList.add("fa-regular", "fa-heart", "fa-xl");
+	if (book.isFavorite == "on") {
+		markFavoriteIcon.classList.add("fa-solid", "fa-heart", "fa-xl");
+	} else {
+		markFavoriteIcon.classList.add("fa-regular", "fa-heart", "fa-xl");
+	}
 	markFavoriteButton.addEventListener("click", () => {
 		if (markFavoriteIcon.classList.contains("fa-regular")) {
 			markFavoriteIcon.classList.replace("fa-regular", "fa-solid");

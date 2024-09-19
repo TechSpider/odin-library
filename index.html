@@ -11,7 +11,7 @@
 	<body>
 		<div class="container">
 			<div class="header">
-				<h1>The Library of :3</h1>
+				<h1>The Library</h1>
 			</div>
 			<div class="cards-header">
 				<h1></h1>
@@ -19,25 +19,25 @@
 			</div>
 			<div class="cards-container"></div>
 			<dialog class="dialog">
-				<form class="new-book-form" method="dialog">
+				<form class="new-book-form" name="Form" method="dialog">
 					<label for="book-title">
 						Title:
-						<input name="book-title" id="book-title" type="text" autofocus />
+						<input name="book-title" id="book-title" type="text" autofocus required />
 					</label>
 
 					<label for="author-name">
 						Author:
-						<input name="author-name" id="author-name" type="text" />
+						<input name="author-name" id="author-name" type="text" required />
 					</label>
 
 					<label for="published-date">
 						Published Date:
-						<input name="published-date" id="published-date" type="text" />
+						<input name="published-date" id="published-date" type="date" required />
 					</label>
 
 					<label for="pages">
 						# of Pages:
-						<input name="pages" id="pages" type="number" />
+						<input name="pages" id="pages" type="number" required />
 					</label>
 
 					<label for="have-read">
